@@ -1,0 +1,724 @@
+KIDS Distribution saved on Oct 26, 2014@22:40:35
+Not for distribution please. Call Sam at 206-353-1681.
+**KIDS**:KBAN LISTMAN RESIZE 0.0^
+
+**INSTALL NAME**
+KBAN LISTMAN RESIZE 0.0
+"BLD",8986,0)
+KBAN LISTMAN RESIZE 0.0^^0^3141026^y
+"BLD",8986,1,0)
+^^4^4^3141026^
+"BLD",8986,1,1,0)
+Created by Sam Habiel based on code authored by George Timson.
+"BLD",8986,1,2,0)
+ 
+"BLD",8986,1,3,0)
+Resizes pharmacy listman screens so that they take up all available 
+"BLD",8986,1,4,0)
+length rather than being limited by the hardcoded 24 lines.
+"BLD",8986,4,0)
+^9.64PA^^
+"BLD",8986,6.3)
+2
+"BLD",8986,"KRN",0)
+^9.67PA^779.2^20
+"BLD",8986,"KRN",.4,0)
+.4
+"BLD",8986,"KRN",.401,0)
+.401
+"BLD",8986,"KRN",.402,0)
+.402
+"BLD",8986,"KRN",.403,0)
+.403
+"BLD",8986,"KRN",.5,0)
+.5
+"BLD",8986,"KRN",.84,0)
+.84
+"BLD",8986,"KRN",3.6,0)
+3.6
+"BLD",8986,"KRN",3.8,0)
+3.8
+"BLD",8986,"KRN",9.2,0)
+9.2
+"BLD",8986,"KRN",9.8,0)
+9.8
+"BLD",8986,"KRN",9.8,"NM",0)
+^9.68A^3^3
+"BLD",8986,"KRN",9.8,"NM",1,0)
+VALM0^^0^B28368113
+"BLD",8986,"KRN",9.8,"NM",2,0)
+PSJ200^^0^B22302307
+"BLD",8986,"KRN",9.8,"NM",3,0)
+PSOORUT3^^0^B9779587
+"BLD",8986,"KRN",9.8,"NM","B","PSJ200",2)
+
+"BLD",8986,"KRN",9.8,"NM","B","PSOORUT3",3)
+
+"BLD",8986,"KRN",9.8,"NM","B","VALM0",1)
+
+"BLD",8986,"KRN",19,0)
+19
+"BLD",8986,"KRN",19.1,0)
+19.1
+"BLD",8986,"KRN",101,0)
+101
+"BLD",8986,"KRN",409.61,0)
+409.61
+"BLD",8986,"KRN",771,0)
+771
+"BLD",8986,"KRN",779.2,0)
+779.2
+"BLD",8986,"KRN",870,0)
+870
+"BLD",8986,"KRN",8989.51,0)
+8989.51
+"BLD",8986,"KRN",8989.52,0)
+8989.52
+"BLD",8986,"KRN",8994,0)
+8994
+"BLD",8986,"KRN","B",.4,.4)
+
+"BLD",8986,"KRN","B",.401,.401)
+
+"BLD",8986,"KRN","B",.402,.402)
+
+"BLD",8986,"KRN","B",.403,.403)
+
+"BLD",8986,"KRN","B",.5,.5)
+
+"BLD",8986,"KRN","B",.84,.84)
+
+"BLD",8986,"KRN","B",3.6,3.6)
+
+"BLD",8986,"KRN","B",3.8,3.8)
+
+"BLD",8986,"KRN","B",9.2,9.2)
+
+"BLD",8986,"KRN","B",9.8,9.8)
+
+"BLD",8986,"KRN","B",19,19)
+
+"BLD",8986,"KRN","B",19.1,19.1)
+
+"BLD",8986,"KRN","B",101,101)
+
+"BLD",8986,"KRN","B",409.61,409.61)
+
+"BLD",8986,"KRN","B",771,771)
+
+"BLD",8986,"KRN","B",779.2,779.2)
+
+"BLD",8986,"KRN","B",870,870)
+
+"BLD",8986,"KRN","B",8989.51,8989.51)
+
+"BLD",8986,"KRN","B",8989.52,8989.52)
+
+"BLD",8986,"KRN","B",8994,8994)
+
+"MBREQ")
+0
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"RTN")
+3
+"RTN","PSJ200")
+0^2^B22302307
+"RTN","PSJ200",1,0)
+PSJ200 ;BIR/RSB-UTILITY TO CORRECT CHANGED USER NAMES IN IV'S ;30 APR 97 / 8:39 AM
+"RTN","PSJ200",2,0)
+ ;;5.0; INPATIENT MEDICATIONS ;;16 DEC 97;Build 2
+"RTN","PSJ200",3,0)
+ ; DO NOT DELETE THIS ROUTINE, IT IS CALLED BY MANY PROTOCOL
+"RTN","PSJ200",4,0)
+ ; ENTRY ACTIONS TO CHANGE THE SCREEN LENGTH IN LISTMAN!
+"RTN","PSJ200",5,0)
+ ;
+"RTN","PSJ200",6,0)
+ I '$L($O(^XTMP("PSJ NEW PERSON",0))) D  Q
+"RTN","PSJ200",7,0)
+ .W !!," This option doesn't need to be run.  All changed names in IVs have "
+"RTN","PSJ200",8,0)
+ .W !," been corrected.  Please have IRM remove this option from your menu."
+"RTN","PSJ200",9,0)
+ I '$$PRIV Q
+"RTN","PSJ200",10,0)
+ K PSJL,PSJPT,DUOUT,DTOUT
+"RTN","PSJ200",11,0)
+ W @IOF,!," The following user names were found in IV orders.  These  names have either",!," been deleted, changed, or are duplicates in the NEW PERSON file.",!
+"RTN","PSJ200",12,0)
+ S PSJL=0 F  S PSJL=$O(^XTMP("PSJ NEW PERSON",PSJL)) Q:PSJL=""  D
+"RTN","PSJ200",13,0)
+ .W !?2,PSJL
+"RTN","PSJ200",14,0)
+ W !!," Please do one of the following:"
+"RTN","PSJ200",15,0)
+ W !," a. If the name has changed, pick the correct name from the NEW PERSON file."
+"RTN","PSJ200",16,0)
+ W !," b. If the person has been deleted from the file, please see the appropriate",!?3," person to get this named added back into the NEW PERSON file and rerun this",!?3," option."
+"RTN","PSJ200",17,0)
+ W !! S PSJL=0 F  S PSJL=$O(^XTMP("PSJ NEW PERSON",PSJL)) Q:PSJL=""!($G(DUOUT))  D
+"RTN","PSJ200",18,0)
+ .K PSJPT S PSJPT=$$200
+"RTN","PSJ200",19,0)
+ .S:PSJPT=-1 PSJB=1 I PSJPT'=-1 S ^XTMP("PSJ NEW1",PSJL)=PSJPT
+"RTN","PSJ200",20,0)
+ I '$D(PSJB) W !!," Finished. Please have IRM remove this option"
+"RTN","PSJ200",21,0)
+ I  W " (PSJI 200) from",!," your menu, as it is no longer needed."
+"RTN","PSJ200",22,0)
+ E  W !!,"Not all names have been corrected, PLEASE RERUN THIS OPTION!"
+"RTN","PSJ200",23,0)
+ K PSJB,PSJC,PSJL,PSJPT,PSJDFN,PSJORD,PSJ1,PSJ2,PSJ3,PSJ4,PSJNUM
+"RTN","PSJ200",24,0)
+ S ZTIO="",ZTRTN="SEARCH^PSJ200",ZTDESC="Correct names in IV orders"
+"RTN","PSJ200",25,0)
+ S ZTDTH=$H D ^%ZTLOAD
+"RTN","PSJ200",26,0)
+ Q
+"RTN","PSJ200",27,0)
+200()          ;
+"RTN","PSJ200",28,0)
+201 K DUOUT,DTOUT W ! K DIC S DIC="^VA(200,",DIC(0)="AEMQ"
+"RTN","PSJ200",29,0)
+ S DIC("A")=" Please select the correct name to replace "_PSJL_" : "
+"RTN","PSJ200",30,0)
+ D ^DIC K DIC S PSJPT=Y
+"RTN","PSJ200",31,0)
+ I +PSJPT'=-1 S DIR(0)="Y",DIR("A")="Are you sure "_$P(^VA(200,+Y,0),"^")_" is the correct choice" D ^DIR I Y=0 G 201
+"RTN","PSJ200",32,0)
+ Q +PSJPT
+"RTN","PSJ200",33,0)
+ ;
+"RTN","PSJ200",34,0)
+PRIV() ;
+"RTN","PSJ200",35,0)
+ I $D(^XUSEC("PSJI MGR",DUZ))
+"RTN","PSJ200",36,0)
+ E  W !," You must hold the PSJI MGR security to run this routine"
+"RTN","PSJ200",37,0)
+ Q $T
+"RTN","PSJ200",38,0)
+ ;
+"RTN","PSJ200",39,0)
+SEARCH ;
+"RTN","PSJ200",40,0)
+ F PSJ1=0 F  S PSJ1=$O(^XTMP("PSJ NEW1",PSJ1)) Q:PSJ1=""  D
+"RTN","PSJ200",41,0)
+ .F PSJ2=0:0 S PSJ2=$O(^XTMP("PSJ NEW PERSON",PSJ1,PSJ2)) Q:'PSJ2  D
+"RTN","PSJ200",42,0)
+ ..D CONVERT(PSJ2,0)
+"RTN","PSJ200",43,0)
+ ..F PSJ3=0:0 S PSJ3=$O(^XTMP("PSJ NEW PERSON",PSJ1,PSJ2,PSJ3)) Q:'PSJ3  D
+"RTN","PSJ200",44,0)
+ ...K DA,DIE S DIE="^PS(55,"_PSJ2_",""IV"",",DA(1)=PSJ2,DA=PSJ3
+"RTN","PSJ200",45,0)
+ ...S DR="135////"_^XTMP("PSJ NEW1",PSJ1) D ^DIE K DIE,DA
+"RTN","PSJ200",46,0)
+ ...S X=$P($G(^PS(55,PSJ2,"IV",PSJ3,0)),"^",21),PSOC=$S(X=0:"SN",X]"":"ZC",1:"SN") D EN1^PSJHL2(PSJ2,PSOC,PSJ3_"V")
+"RTN","PSJ200",47,0)
+ ...K ^XTMP("PSJ NEW PERSON",PSJ1,PSJ2,PSJ3)
+"RTN","PSJ200",48,0)
+ ...S PSJC=$S('$D(PSJC):1,1:PSJC+1) ;W:((PSJC#25)=0) "."
+"RTN","PSJ200",49,0)
+ .K ^XTMP("PSJ NEW1",PSJ1)
+"RTN","PSJ200",50,0)
+ D M S ZTIO="@" Q
+"RTN","PSJ200",51,0)
+CONVERT(DFN,TYPE) ;
+"RTN","PSJ200",52,0)
+ ; Convert existing UD orders to new format. Only run once/patient, and
+"RTN","PSJ200",53,0)
+ ; only converts orders with a stop date<(5.0 Install date-365)
+"RTN","PSJ200",54,0)
+ ;  DFN = Patient IEN
+"RTN","PSJ200",55,0)
+ ; TYPE = Background or Interactive mode
+"RTN","PSJ200",56,0)
+ ;
+"RTN","PSJ200",57,0)
+ I '$D(^PS(55,DFN,0)) Q
+"RTN","PSJ200",58,0)
+ N ADS,ADS1,DDRG,ND,ON,ON1,PSOC,PSGDT,STAT,STPDT,STS,X,XX,X1,X2
+"RTN","PSJ200",59,0)
+ D NOW^%DTC S X1=$P(%,"."),X2=-365 D C^%DTC S PSGDT=X
+"RTN","PSJ200",60,0)
+ ;Convert and Backfill IV orders.
+"RTN","PSJ200",61,0)
+ F STPDT=PSGDT:0 S STPDT=$O(^PS(55,DFN,"IV","AIS",STPDT)) Q:'STPDT  F ON=0:0 S ON=$O(^PS(55,DFN,"IV","AIS",STPDT,ON)) Q:'ON  I '$G(^PS(55,DFN,"IV",ON,.2)) D
+"RTN","PSJ200",62,0)
+ .S ND=$G(^PS(55,DFN,"IV",ON,6)) F ADS="AD","SOL" S ADS1=$O(^PS(55,DFN,"IV",ON,ADS)) F ON1=0:0 S ON1=$O(^PS(55,DFN,"IV",ON,ADS,ON1))  Q:'ON1  Q:$G(^PS(55,DFN,"IV",ON,.2))  S XX=+$G(^PS(55,DFN,"IV",ON,ADS,ON1,0)) D
+"RTN","PSJ200",63,0)
+ ..S:XX XX=$S(ADS="AD":$P($G(^PS(52.6,XX,0)),U,11),1:$P($G(^PS(52.7,XX,0)),U,11)) I XX I $P(^PS(50.7,XX,0),U,3)=1 S ^PS(55,DFN,"IV",ON,.2)=XX_U_$P(ND,U,2,3) W:TYPE "."
+"RTN","PSJ200",64,0)
+ Q
+"RTN","PSJ200",65,0)
+ ;
+"RTN","PSJ200",66,0)
+M ; sends mail message when complete
+"RTN","PSJ200",67,0)
+ I $L($O(^XTMP("PSJ NEW PERSON",0))) Q
+"RTN","PSJ200",68,0)
+ K XMY S XMSUB="Changed names in IV orders",XMTEXT="PSJ1(",XMY(DUZ)=""
+"RTN","PSJ200",69,0)
+ S XMDUZ="Inpatient Medications Version 5.0 install",PSJ1(1)=""
+"RTN","PSJ200",70,0)
+ S PSJ1(2)="The process that has replaced the changed names in the IV orders has finished.",PSJ1(3)=""
+"RTN","PSJ200",71,0)
+ S PSJ1(4)="Please have IRM remove this option (PSJI 200) from your menu, as it is no"
+"RTN","PSJ200",72,0)
+ S PSJ1(5)="longer needed." D ^XMD K XMSUB,XMDUZ,XMTEXT,PSJ1 Q
+"RTN","PSJ200",73,0)
+ ;
+"RTN","PSJ200",74,0)
+A(LONG,SHORT,SHRINK)         ;  Resizes list area
+"RTN","PSJ200",75,0)
+ ;                      copied this from TIU    RESIZE^TIULM
+"RTN","PSJ200",76,0)
+ N PSJBM S PSJBM=$S(VALMMENU:SHORT,+$G(SHRINK):SHORT,1:LONG)
+"RTN","PSJ200",77,0)
+ ; VEN/SMH Get real margins not fake ones
+"RTN","PSJ200",78,0)
+ S PSOBM=$P($$AUTOMARG^VALM0(),U,2)-5
+"RTN","PSJ200",79,0)
+ ; S PSOBM=$S(VALMMENU:19,1:21) I VALM("BM")'=PSOBM S VALMBCK="R" D  ; Old
+"RTN","PSJ200",80,0)
+ I VALM("BM")'=PSOBM S VALMBCK="R" D
+"RTN","PSJ200",81,0)
+ .; VEN/SMH END MODS
+"RTN","PSJ200",82,0)
+ .S VALM("BM")=PSOBM,VALM("LINES")=(PSOBM-VALM("TM"))+1 I +$G(VALMCC) D RESET^VALM4
+"RTN","PSJ200",83,0)
+ Q
+"RTN","PSJ200",84,0)
+ Q
+"RTN","PSOORUT3")
+0^3^B9779587
+"RTN","PSOORUT3",1,0)
+PSOORUT3 ;ISC-BHAM/SAB-build listman screen continued ;12/07/95 18:12
+"RTN","PSOORUT3",2,0)
+ ;;7.0;OUTPATIENT PHARMACY;**5,25,243**;DEC 1997;Build 2
+"RTN","PSOORUT3",3,0)
+ ;
+"RTN","PSOORUT3",4,0)
+ ;Reference to MAIN^TIUEDIT supported by IA# 2410
+"RTN","PSOORUT3",5,0)
+ ;Reference to RESET^VALM4 supported by IA# 2334
+"RTN","PSOORUT3",6,0)
+ ;bulids allergy/adverse reactions list
+"RTN","PSOORUT3",7,0)
+ F DR=0:0 S DR=$O(GMRAL(DR)) Q:'DR  S ^TMP($J,"AL",$S($P(GMRAL(DR),"^",4):1,1:2),$S('$P(GMRAL(DR),"^",5):1,1:2),$P(GMRAL(DR),"^",7),$P(GMRAL(DR),"^",2))=""
+"RTN","PSOORUT3",8,0)
+ S IEN=IEN+1,^TMP("PSOPI",$J,IEN,0)="Allergies "
+"RTN","PSOORUT3",9,0)
+ S:$O(^TMP($J,"AL",1,1,""))]"" IEN=IEN+1,^TMP("PSOPI",$J,IEN,0)="    Verified: "
+"RTN","PSOORUT3",10,0)
+ S (DR,TY)="" F I=0:0 S TY=$O(^TMP($J,"AL",1,1,TY)) Q:TY=""  F D=0:0 S DR=$O(^TMP($J,"AL",1,1,TY,DR)) Q:DR=""  D
+"RTN","PSOORUT3",11,0)
+ .S:$L(^TMP("PSOPI",$J,IEN,0)_DR_", ")>80 IEN=IEN+1,$P(^TMP("PSOPI",$J,IEN,0)," ",14)=" " S ^TMP("PSOPI",$J,IEN,0)=$G(^TMP("PSOPI",$J,IEN,0))_DR_", "
+"RTN","PSOORUT3",12,0)
+ S:$O(^TMP($J,"AL",2,1,""))]"" IEN=IEN+1,^TMP("PSOPI",$J,IEN,0)="Non-Verified: "
+"RTN","PSOORUT3",13,0)
+ S (DR,TY)="" F I=0:0 S TY=$O(^TMP($J,"AL",2,1,TY)) Q:TY=""  F D=0:0 S DR=$O(^TMP($J,"AL",2,1,TY,DR)) Q:DR=""  D
+"RTN","PSOORUT3",14,0)
+ .S:$L(^TMP("PSOPI",$J,IEN,0)_DR_", ")>80 IEN=IEN+1,$P(^TMP("PSOPI",$J,IEN,0)," ",14)=" " S ^TMP("PSOPI",$J,IEN,0)=$G(^TMP("PSOPI",$J,IEN,0))_DR_", "
+"RTN","PSOORUT3",15,0)
+ D REMOTE^PSOORUT2
+"RTN","PSOORUT3",16,0)
+ S IEN=IEN+1,^TMP("PSOPI",$J,IEN,0)=" "
+"RTN","PSOORUT3",17,0)
+ S IEN=IEN+1,^TMP("PSOPI",$J,IEN,0)="Adverse Reactions "
+"RTN","PSOORUT3",18,0)
+ S:$O(^TMP($J,"AL",1,2,""))]"" IEN=IEN+1,^TMP("PSOPI",$J,IEN,0)="    Verified: "
+"RTN","PSOORUT3",19,0)
+ S (DR,TY)="" F I=0:0 S TY=$O(^TMP($J,"AL",1,2,TY)) Q:TY=""  F D=0:0 S DR=$O(^TMP($J,"AL",1,2,TY,DR)) Q:DR=""  D
+"RTN","PSOORUT3",20,0)
+ .S:$L(^TMP("PSOPI",$J,IEN,0)_DR_", ")>80 IEN=IEN+1,$P(^TMP("PSOPI",$J,IEN,0)," ",14)=" " S ^TMP("PSOPI",$J,IEN,0)=$G(^TMP("PSOPI",$J,IEN,0))_DR_", "
+"RTN","PSOORUT3",21,0)
+ S:$O(^TMP($J,"AL",2,2,""))]"" IEN=IEN+1,^TMP("PSOPI",$J,IEN,0)="Non-Verified: "
+"RTN","PSOORUT3",22,0)
+ S (DR,TY)="" F I=0:0 S TY=$O(^TMP($J,"AL",2,2,TY)) Q:TY=""  F D=0:0 S DR=$O(^TMP($J,"AL",2,2,TY,DR)) Q:DR=""  D
+"RTN","PSOORUT3",23,0)
+ .S:$L(^TMP("PSOPI",$J,IEN,0)_DR_", ")>80 IEN=IEN+1,$P(^TMP("PSOPI",$J,IEN,0)," ",15)=" " S ^TMP("PSOPI",$J,IEN,0)=$G(^TMP("PSOPI",$J,IEN,0))_DR_", "
+"RTN","PSOORUT3",24,0)
+ K TY,D,I,GMRA,GMRAL,DR,AD,ADL,^TMP($J,"AL")
+"RTN","PSOORUT3",25,0)
+ Q
+"RTN","PSOORUT3",26,0)
+PRONTE ;entry point to enter a progress note DBIA 220
+"RTN","PSOORUT3",27,0)
+ I $T(MAIN^TIUEDIT)]"" D FULL^VALM1,MAIN^TIUEDIT(3,.TIUDA,PSODFN,"","","","",1) Q
+"RTN","PSOORUT3",28,0)
+ S VALMSG="Progress Notes NOT Available.",VALMBCK=""
+"RTN","PSOORUT3",29,0)
+ Q
+"RTN","PSOORUT3",30,0)
+DPLYOR ;displays status of patient's orders
+"RTN","PSOORUT3",31,0)
+ S PSOHA=1,(EXT,DTME,RX,OLDT)="",(CNT,CNT1,RXNYM)=0
+"RTN","PSOORUT3",32,0)
+ S X=PSODFN,DIC=2,DIC(0)="ZN" D ^DIC K DIC S NAM=Y(0,0),NNUM=PSODFN
+"RTN","PSOORUT3",33,0)
+ D BING^PSOBGMG3 S VALMBCK="R" K PSOHA
+"RTN","PSOORUT3",34,0)
+ W ! S DIR(0)="E",DIR("A")="Press Return to Continue" D ^DIR
+"RTN","PSOORUT3",35,0)
+ K DIR,DIRUT,DTOUT,DUOUT
+"RTN","PSOORUT3",36,0)
+ Q
+"RTN","PSOORUT3",37,0)
+A ;resizes list area
+"RTN","PSOORUT3",38,0)
+ ; VEN/SMH TEMP MODS to set actual screen size rather than an artificial one.
+"RTN","PSOORUT3",39,0)
+ S PSOBM=$P($$AUTOMARG^VALM0(),U,2)-5
+"RTN","PSOORUT3",40,0)
+ ; S PSOBM=$S(VALMMENU:19,1:21) I VALM("BM")'=PSOBM S VALMBCK="R" D  ; VEN/SMH
+"RTN","PSOORUT3",41,0)
+ I VALM("BM")'=PSOBM S VALMBCK="R" D
+"RTN","PSOORUT3",42,0)
+ .; END MODS
+"RTN","PSOORUT3",43,0)
+ .S VALM("BM")=PSOBM,VALM("LINES")=(PSOBM-VALM("TM"))+1 I +$G(VALMCC) D RESET^VALM4
+"RTN","PSOORUT3",44,0)
+ Q
+"RTN","VALM0")
+0^1^B28368113
+"RTN","VALM0",1,0)
+VALM0 ;MJK/ALB - List Manager (cont.);08:19 PM  17 Jan 1993 ; 10/26/14 10:05pm
+"RTN","VALM0",2,0)
+ ;;1.0;List Manager;;Aug 13, 1993;Build 2
+"RTN","VALM0",3,0)
+ ;
+"RTN","VALM0",4,0)
+INIT(NAME,PARMS) ;
+"RTN","VALM0",5,0)
+ D STACK
+"RTN","VALM0",6,0)
+ K VALMBCK,VALMQUIT,VALMHDR
+"RTN","VALM0",7,0)
+ S VALM(0)=$G(PARMS)
+"RTN","VALM0",8,0)
+ I NAME["^",'$$SETUP^VALM00(.NAME) S VALMQUIT="" G INITQ
+"RTN","VALM0",9,0)
+ I NAME'["^",'$$TEMP(.NAME) S VALMQUIT="" G INITQ
+"RTN","VALM0",10,0)
+ D TERM:'VALMEVL,CALC
+"RTN","VALM0",11,0)
+INITQ K VALMX,X Q
+"RTN","VALM0",12,0)
+ ;
+"RTN","VALM0",13,0)
+TERM ; -- set up term characteristics
+"RTN","VALM0",14,0)
+ D HOME^%ZIS
+"RTN","VALM0",15,0)
+ ; VEN/SMH Get real teminal margin, not the fake one
+"RTN","VALM0",16,0)
+ S IOSL=$P($$AUTOMARG(),U,2)
+"RTN","VALM0",17,0)
+ ; VEN/SMH End
+"RTN","VALM0",18,0)
+ S VALMWD=IOM,X=$$IO_";IOBON;IOBOFF;IOSGR0" D ENDR^%ZISS
+"RTN","VALM0",19,0)
+ S VALMSGR=$S($G(IOSGR0)]"":IOSGR0,1:$G(IOINORM))
+"RTN","VALM0",20,0)
+ ; -- cursor off/on to avoid bouncing
+"RTN","VALM0",21,0)
+ S (VALMCON,VALMCOFF)=""
+"RTN","VALM0",22,0)
+ I $E(IOST,1,4)="C-VT" S VALMCOFF=$C(13,27,91)_"?25l"_$C(13),VALMCON=$C(13,27,91)_"?25h"_$C(13)
+"RTN","VALM0",23,0)
+ S X="XQORM6" X ^%ZOSF("TEST") D:$T INIT^XQORM6
+"RTN","VALM0",24,0)
+ S VALMIOXY=^%ZOSF("XY")
+"RTN","VALM0",25,0)
+ Q
+"RTN","VALM0",26,0)
+ ;
+"RTN","VALM0",27,0)
+IO() ; -- what device params
+"RTN","VALM0",28,0)
+ Q "IORVON;IORVOFF;IOIL;IOSTBM;IOSC;IORC;IOEDEOP;IOINHI;IOINORM;IOUON;IOUOFF"
+"RTN","VALM0",29,0)
+ ;
+"RTN","VALM0",30,0)
+STACK ; -- stack vars
+"RTN","VALM0",31,0)
+ I $D(VALMEVL) D
+"RTN","VALM0",32,0)
+ .K ^TMP("VALM STACK",$J,VALMEVL)
+"RTN","VALM0",33,0)
+ .; -- stack'em
+"RTN","VALM0",34,0)
+ .I $O(^TMP("VALM STACK",$J,VALMEVL,"VALM",""))="" S X="" F  S X=$O(VALM(X)) Q:X=""  S ^(X)=VALM(X)
+"RTN","VALM0",35,0)
+ .I $O(^TMP("VALM STACK",$J,VALMEVL,"OTHER VARS",""))="" F X="VALMMENU","VALMCAP","VALMAR","VALMCNT","VALMBG","VALMLST","VALMCC","VALMLFT" S ^(X)=$G(@X)
+"RTN","VALM0",36,0)
+ .K VALMBG,VALM,VALMLFT
+"RTN","VALM0",37,0)
+ ;
+"RTN","VALM0",38,0)
+ S VALMEVL=$S($D(VALMEVL):VALMEVL+1,1:0)
+"RTN","VALM0",39,0)
+ I 'VALMEVL D
+"RTN","VALM0",40,0)
+ .F X="VALM DATA","VALM VIDEO","VALM VIDEO SAVE","VALMAR" K ^TMP(X,$J)
+"RTN","VALM0",41,0)
+ .K VALMBG,VALM,VALMLFT
+"RTN","VALM0",42,0)
+STACKQ Q
+"RTN","VALM0",43,0)
+ ;
+"RTN","VALM0",44,0)
+POP ; -- clean up and unstack vars
+"RTN","VALM0",45,0)
+ K VALMLFT,VALMMENU,VALMCAP,VALMHDR,VALMPGE,VALMUP,VALMDN,VALMDDF,VALMCC,VALMAR,VALMCNT,VALM,VALMBG,VALMLST,LN
+"RTN","VALM0",46,0)
+ K ^TMP("VALM DATA",$J,VALMEVL) D KILL^VALM10()
+"RTN","VALM0",47,0)
+ ;
+"RTN","VALM0",48,0)
+ ; -- final clean up
+"RTN","VALM0",49,0)
+ I 'VALMEVL D  G POPQ
+"RTN","VALM0",50,0)
+ .D CLEAR^VALM1
+"RTN","VALM0",51,0)
+ .S X=VALMWD X ^%ZOSF("RM")
+"RTN","VALM0",52,0)
+ .S Y=$$IO F I=1:1 S X=$P(Y,";",I) Q:X=""  K @X
+"RTN","VALM0",53,0)
+ .K IOBON,IOBOFF,IOSGR0,VALMSGR
+"RTN","VALM0",54,0)
+ .K Y,X,I,VALMEVL,VALMWD,VALMFIND,VALMIOXY,VALMKEY,VALMCON,VALMCOFF,VALMQUIT
+"RTN","VALM0",55,0)
+ .S X="XQORM6" X ^%ZOSF("TEST") D:$T EXIT^XQORM6
+"RTN","VALM0",56,0)
+ ;
+"RTN","VALM0",57,0)
+ ; -- unstack'em
+"RTN","VALM0",58,0)
+ S VALMEVL=$S(VALMEVL:VALMEVL-1,1:0)
+"RTN","VALM0",59,0)
+ I $O(^TMP("VALM STACK",$J,VALMEVL,"VALM",""))]"" S X="" F  S X=$O(^(X)) Q:X=""  S VALM(X)=^(X)
+"RTN","VALM0",60,0)
+ I $O(^TMP("VALM STACK",$J,VALMEVL,"OTHER VARS",""))]"" S X="" F  S X=$O(^(X)) Q:X=""  S @X=^(X)
+"RTN","VALM0",61,0)
+ K ^TMP("VALM STACK",$J,VALMEVL)
+"RTN","VALM0",62,0)
+ D COL^VALM
+"RTN","VALM0",63,0)
+ I $G(^TMP("VALM DATA",$J,VALMEVL,"HIDDEN"))'=$P($G(VALMKEY),U,2) D KEYS^VALM00($G(^("HIDDEN")),1)
+"RTN","VALM0",64,0)
+ S VALMBCK="R",(VALMUP,VALMDN)=""
+"RTN","VALM0",65,0)
+POPQ Q
+"RTN","VALM0",66,0)
+ ;
+"RTN","VALM0",67,0)
+TEMP(NAME) ; -- use list template
+"RTN","VALM0",68,0)
+ N VALM0,VALM1,NODE
+"RTN","VALM0",69,0)
+ S VALM=+$O(^SD(409.61,"B",NAME,0)),VALM0=$G(^SD(409.61,VALM,0)),VALM1=$G(^(1))
+"RTN","VALM0",70,0)
+ G:VALM0="" TEMPQ
+"RTN","VALM0",71,0)
+ ;
+"RTN","VALM0",72,0)
+ F NODE="ARRAY","HDR","EXP","HLP","INIT","FNL" S VALM(NODE)=$G(^SD(409.61,VALM,NODE))
+"RTN","VALM0",73,0)
+ S VALM("IFN")=VALM D COL^VALM
+"RTN","VALM0",74,0)
+ S VALM("TYPE")=$P(VALM0,U,2)
+"RTN","VALM0",75,0)
+ S VALM("TM")=$P(VALM0,U,5)
+"RTN","VALM0",76,0)
+ ; DSS/SMH TEMP
+"RTN","VALM0",77,0)
+ ; S VALM("BM")=$P(VALM0,U,6)
+"RTN","VALM0",78,0)
+ S VALM("BM")=$S($G(IOSL):IOSL-5,1:$P(VALM0,U,6))
+"RTN","VALM0",79,0)
+ ; DSS/SMH END TEMP
+"RTN","VALM0",80,0)
+ S VALM("FIXED")=$S($G(^SD(409.61,VALM("IFN"),"COL",+$O(^SD(409.61,VALM("IFN"),"COL","AIDENT",1,0)),0))]"":$P(^(0),U,2)+$P(^(0),U,3),1:0)
+"RTN","VALM0",81,0)
+ S VALM("RM")=$S($P(VALM0,U,4):$P(VALM0,U,4),1:80)
+"RTN","VALM0",82,0)
+ S VALMCC=+$P(VALM0,U,8)
+"RTN","VALM0",83,0)
+ S VALM("ENTITY")=$P(VALM0,U,9)
+"RTN","VALM0",84,0)
+ S VALM("PROTOCOL")=$P(VALM0,U,10)
+"RTN","VALM0",85,0)
+ S VALM("PRT")=$P(VALM1,U)
+"RTN","VALM0",86,0)
+ S VALM("TITLE")=$S($P(VALM0,U,11)]"":$P(VALM0,U,11),1:$P(VALM0,U))
+"RTN","VALM0",87,0)
+ S VALM("MAX")=$S($P(VALM0,U,12):$P(VALM0,U,12),1:1)
+"RTN","VALM0",88,0)
+ S VALM("DAYS")=$S($P(VALM0,U,13):$P(VALM0,U,13),1:30)
+"RTN","VALM0",89,0)
+ S VALM("DEFS")=$S($P(VALM0,U,14)=0:0,1:1)
+"RTN","VALM0",90,0)
+ S VALM("HIDDEN")=$P(VALM1,U,2)
+"RTN","VALM0",91,0)
+ I VALM("HIDDEN")="",VALM("TYPE")=2 S VALM("HIDDEN")="VALM HIDDEN ACTIONS"
+"RTN","VALM0",92,0)
+TEMPQ Q VALM0]""
+"RTN","VALM0",93,0)
+ ;
+"RTN","VALM0",94,0)
+CALC ; -- calculate derived parmeters
+"RTN","VALM0",95,0)
+ N NODE,X,I,X,Y
+"RTN","VALM0",96,0)
+ F NODE="HIDDEN","DAYS","EXP","HLP","INIT","FNL" I $G(VALM(NODE))]"" S ^TMP("VALM DATA",$J,VALMEVL,NODE)=VALM(NODE) K VALM(NODE)
+"RTN","VALM0",97,0)
+ S VALMAR=$E(VALM("ARRAY"),2,50) K VALM("ARRAY")
+"RTN","VALM0",98,0)
+ S:VALMAR="" VALMAR="^TMP(""VALMAR"",$J,VALMEVL)"
+"RTN","VALM0",99,0)
+ S VALM("LINES")=(VALM("BM")-VALM("TM"))+1
+"RTN","VALM0",100,0)
+ S:VALM("TM")<3 VALM("TITLE")=" "_VALM("TITLE")
+"RTN","VALM0",101,0)
+ S:VALM("TYPE")=2 VALM("DEFS")=1
+"RTN","VALM0",102,0)
+ ; -- set up protocol
+"RTN","VALM0",103,0)
+ S X="VALM DISPLAY" ; default protocol
+"RTN","VALM0",104,0)
+ I VALM("TYPE")=1,VALM("PROTOCOL")]"" S X=VALM("PROTOCOL")
+"RTN","VALM0",105,0)
+ I VALM("TYPE")=2,$D(^TMP("VALM DATA",$J,VALMEVL,"EXP")) S X=X_" W/EXPAND"
+"RTN","VALM0",106,0)
+ S VALM("PROTOCOL")=+$O(^ORD(101,"B",X,0))_";ORD(101,"
+"RTN","VALM0",107,0)
+ ;
+"RTN","VALM0",108,0)
+ S (VALMUP,VALMDN)=""
+"RTN","VALM0",109,0)
+ I VALMCC S Y=$$IO F I=1:1 S X=$P(Y,";",I) Q:X=""  I $G(@X)="" S VALMCC=0 Q
+"RTN","VALM0",110,0)
+ S VALMCAP=$$CAPTION^VALM D ATR^VALM00
+"RTN","VALM0",111,0)
+ I $G(^TMP("VALM DATA",$J,VALMEVL,"HIDDEN"))'=$P($G(VALMKEY),U,2) D KEYS^VALM00($G(^("HIDDEN")),1)
+"RTN","VALM0",112,0)
+ S:$G(^DISV($S($D(DUZ)#2:DUZ,1:0),"VALMMENU",VALM("PROTOCOL")))="" ^(VALM("PROTOCOL"))=1 S VALMMENU=^(VALM("PROTOCOL"))
+"RTN","VALM0",113,0)
+ Q
+"RTN","VALM0",114,0)
+ ;
+"RTN","VALM0",115,0)
+ ; VEN/SMH -- ALL MINE WHAT FOLLOWS
+"RTN","VALM0",116,0)
+AUTOMARG() ;RETURNS IOM^IOSL IF IT CAN and resets terminal to those dimensions; GT.M and Cache
+"RTN","VALM0",117,0)
+ ; Stolen from George Timson's %ZIS3.
+"RTN","VALM0",118,0)
+ ; ZEXCEPT: APC,TERM,WIDTH - these are not really variables
+"RTN","VALM0",119,0)
+ N %I,%T,ESC,DIM S %I=$I,%T=$T D
+"RTN","VALM0",120,0)
+ . ; resize terminal to match actual dimensions
+"RTN","VALM0",121,0)
+ . S ESC=$C(27)
+"RTN","VALM0",122,0)
+ . W ESC,"7",ESC,"[r",ESC,"[999;999H",ESC,"[6n"
+"RTN","VALM0",123,0)
+ . I +$SY=0 U $P:(:"+S+I":"R") R DIM:1 E  Q
+"RTN","VALM0",124,0)
+ . I +$SY=47 U $P:(TERM="R":NOECHO) R DIM:1 E  Q
+"RTN","VALM0",125,0)
+ . W ESC,"8"
+"RTN","VALM0",126,0)
+ . I +$SY=0 I DIM?.APC U $P:("") Q
+"RTN","VALM0",127,0)
+ . I +$SY=47 I DIM?.APC U $P:(TERM="":ECHO) Q
+"RTN","VALM0",128,0)
+ . S DIM=+$P(DIM,";",2)_"^"_+$P(DIM,"[",2)
+"RTN","VALM0",129,0)
+ . I +$SY=0 U $P:(+DIM:"")
+"RTN","VALM0",130,0)
+ . I +$SY=47 U $P:(TERM="":ECHO:WIDTH=+$P(DIM,";",2):LENGTH=+$P(DIM,"[",2))
+"RTN","VALM0",131,0)
+ ; restore state
+"RTN","VALM0",132,0)
+ U %I I %T
+"RTN","VALM0",133,0)
+ Q:$Q $S(DIM:DIM,1:"") Q
+"VER")
+8.0^22.0
+**END**
+**END**
