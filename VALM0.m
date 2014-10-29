@@ -120,6 +120,7 @@ CALC ; -- calculate derived parmeters
 AUTOMARG() ;RETURNS IOM^IOSL IF IT CAN and resets terminal to those dimensions; GT.M and Cache
  ; Stolen from George Timson's %ZIS3.
  ; ZEXCEPT: APC,TERM,WIDTH - these are not really variables
+ N X S X=0 X ^%ZOSF("RM")
  N %I,%T,ESC,DIM S %I=$I,%T=$T D
  . ; resize terminal to match actual dimensions
  . S ESC=$C(27)
