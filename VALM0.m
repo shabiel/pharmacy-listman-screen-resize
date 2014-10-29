@@ -12,8 +12,9 @@ INITQ K VALMX,X Q
  ;
 TERM ; -- set up term characteristics
  D HOME^%ZIS
- ; VEN/SMH Get real teminal margin, not the fake one
- S IOSL=$P($$AUTOMARG(),U,2)
+ ; VEN/SMH Get real teminal margins, not the fake ones
+ N % S %=$$AUTOMARG()
+ I %>0 S IOM=$P(%,U),IOSL=$P(%,U,2)
  ; VEN/SMH End
  S VALMWD=IOM,X=$$IO_";IOBON;IOBOFF;IOSGR0" D ENDR^%ZISS
  S VALMSGR=$S($G(IOSGR0)]"":IOSGR0,1:$G(IOINORM))
@@ -73,12 +74,15 @@ TEMP(NAME) ; -- use list template
  S VALM("IFN")=VALM D COL^VALM
  S VALM("TYPE")=$P(VALM0,U,2)
  S VALM("TM")=$P(VALM0,U,5)
- ; DSS/SMH TEMP
+ ; VEN/SMH TEMP
  ; S VALM("BM")=$P(VALM0,U,6)
  S VALM("BM")=$S($G(IOSL):IOSL-5,1:$P(VALM0,U,6))
- ; DSS/SMH END TEMP
+ ; VEN/SMH END TEMP
  S VALM("FIXED")=$S($G(^SD(409.61,VALM("IFN"),"COL",+$O(^SD(409.61,VALM("IFN"),"COL","AIDENT",1,0)),0))]"":$P(^(0),U,2)+$P(^(0),U,3),1:0)
- S VALM("RM")=$S($P(VALM0,U,4):$P(VALM0,U,4),1:80)
+ ; VEN/SMH TEMP
+ ; S VALM("RM")=$S($P(VALM0,U,4):$P(VALM0,U,4),1:80)
+ S VALM("RM")=IOM
+ ; VEN/SMH END TEMP
  S VALMCC=+$P(VALM0,U,8)
  S VALM("ENTITY")=$P(VALM0,U,9)
  S VALM("PROTOCOL")=$P(VALM0,U,10)

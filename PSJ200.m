@@ -75,7 +75,9 @@ A(LONG,SHORT,SHRINK)         ;  Resizes list area
  ;                      copied this from TIU    RESIZE^TIULM
  N PSJBM S PSJBM=$S(VALMMENU:SHORT,+$G(SHRINK):SHORT,1:LONG)
  ; VEN/SMH Get real margins not fake ones
- S PSOBM=$P($$AUTOMARG^VALM0(),U,2)-5
+ N % S %=$P($$AUTOMARG^VALM0(),U,2)-5
+ I %>0 S PSOBM=% 
+ E  S PSOBM=$S(VALMMENU:19,1:21)
  ; S PSOBM=$S(VALMMENU:19,1:21) I VALM("BM")'=PSOBM S VALMBCK="R" D  ; Old
  I VALM("BM")'=PSOBM S VALMBCK="R" D
  .; VEN/SMH END MODS

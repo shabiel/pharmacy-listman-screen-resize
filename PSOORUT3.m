@@ -36,7 +36,9 @@ DPLYOR ;displays status of patient's orders
  Q
 A ;resizes list area
  ; VEN/SMH TEMP MODS to set actual screen size rather than an artificial one.
- S PSOBM=$P($$AUTOMARG^VALM0(),U,2)-5
+ N % S %=$P($$AUTOMARG^VALM0(),U,2)-5
+ I %>0 S PSOBM=% 
+ E  S PSOBM=$S(VALMMENU:19,1:21)
  ; S PSOBM=$S(VALMMENU:19,1:21) I VALM("BM")'=PSOBM S VALMBCK="R" D  ; VEN/SMH
  I VALM("BM")'=PSOBM S VALMBCK="R" D
  .; END MODS
