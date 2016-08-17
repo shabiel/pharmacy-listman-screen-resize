@@ -1,5 +1,5 @@
 VALM0 ;MJK/ALB - List Manager (cont.);08:19 PM  17 Jan 1993 ; 10/26/14 10:05pm
- ;;1.0;List Manager;;Aug 13, 1993
+ ;;1.0;List Manager;;Aug 13, 1993;Build 9
  ;
 INIT(NAME,PARMS) ;
  D STACK
