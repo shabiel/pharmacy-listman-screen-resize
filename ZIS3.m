@@ -36,6 +36,18 @@ MARGN ;Get the margin and page length
  I %A?1A.ANP D SUBIEN(.%A,1) I $D(^%ZIS(2,%A,1)) K %Z91 D ST(1) S %Y=$P(%Y,";",2,9),%ZISMY=$P(%ZISMY,";",2,9) G MARGN
  I %A>3 S $P(%Z91,"^")=$S(%A>255:255,1:+%A)
  I $P(%Y,";",2) S $P(%Z91,"^",3)=+$S($P(%Y,";",2)>65534:65534,1:$P(%Y,";",2)) ;Cache fix for $Y#65535 wrap
+ ; DSS/SMH BEGIN MODS - Attempt to get the best margins for the terminal
+ I $D(^%ZOSF("ZVX")),$T(AUTOMARG^%ZIS4)]"" D
+ . N RMPL,RM,PL S RMPL=$$AUTOMARG^%ZIS4() ; Query terminal for best margins.
+ . I 'RMPL QUIT               ; NB: Not always possible to query the terminal, esp if we do it multiple times in succession
+ . S RM=$P(RMPL,"^",1)        ; Right Margin (normally IOM)
+ . S PL=$P(RMPL,"^",2)        ; Page Length  (normally IOSL)
+ . S %A=RM,$P(%Z91,"^")=$S(%A>255:255,1:+%A),$P(%Y,";")=RM ; copy of line above
+ . S $P(%Y,";",2)=PL,$P(%Z91,"^",3)=+$S($P(%Y,";",2)>65534:65534,1:$P(%Y,";",2)) ; ditto
+ . ; %ZIS="T" taskman (I think?), %ZISB means no "N" in %ZIS. IOP and IO("Q") are well known.
+ . I %ZIS'["T",%ZISB=1,'$D(IOP),'$D(IO("Q")) D
+ .. W "   Terminal Size: "_$P(%Z91,"^")_" x "_$P(%Z91,"^",3)
+ ; DSS/SMH END MODS
  ;
 ALTP I '$D(IO("P")) Q:%A>3  G ASKMAR:%ZTYPE["TRM" Q
  S %X=$F(IO("P"),"M") I %X S %A=+$E(IO("P"),%X,99),$P(%Z91,"^")=$S(%A>255:255,1:%A)

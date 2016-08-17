@@ -73,8 +73,11 @@ M ; sends mail message when complete
  ;
 A(LONG,SHORT,SHRINK)         ;  Resizes list area
  ;                      copied this from TIU    RESIZE^TIULM
+ ; DSS/SMH - BEGIN MODS - Don't resize this for vxVISTA
+ I $D(^%ZOSF("ZVX")) QUIT
+ ; DSS/SMH - BEGIN MODS
  N PSJBM S PSJBM=$S(VALMMENU:SHORT,+$G(SHRINK):SHORT,1:LONG)
  I VALM("BM")'=PSJBM S VALMBCK="R" D
- .S VALM("BM")=PSJBM,VALM("LINES")=(PSJBM-VALM("TM"))+1
- .I +$G(VALMCC) D RESET^VALM4
+ . S VALM("BM")=PSJBM,VALM("LINES")=(PSJBM-VALM("TM"))+1
+ . I +$G(VALMCC) D RESET^VALM4
  Q

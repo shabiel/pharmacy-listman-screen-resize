@@ -12,10 +12,6 @@ INITQ K VALMX,X Q
  ;
 TERM ; -- set up term characteristics
  D HOME^%ZIS
- ; VEN/SMH Get real teminal margins, not the fake ones
- N % S %=$$AUTOMARG()
- I %>0 S IOM=$P(%,U),IOSL=$P(%,U,2)
- ; VEN/SMH End
  S VALMWD=IOM,X=$$IO_";IOBON;IOBOFF;IOSGR0" D ENDR^%ZISS
  S VALMSGR=$S($G(IOSGR0)]"":IOSGR0,1:$G(IOINORM))
  ; -- cursor off/on to avoid bouncing
@@ -74,15 +70,15 @@ TEMP(NAME) ; -- use list template
  S VALM("IFN")=VALM D COL^VALM
  S VALM("TYPE")=$P(VALM0,U,2)
  S VALM("TM")=$P(VALM0,U,5)
- ; VEN/SMH TEMP
- ; S VALM("BM")=$P(VALM0,U,6)
- S VALM("BM")=$S($G(IOSL):IOSL-5,1:$P(VALM0,U,6))
- ; VEN/SMH END TEMP
+ S VALM("BM")=$P(VALM0,U,6)
+ ; DSS/SMH BEGIN MODS - Use IOSL by default for bottom margin (BM was previous written to an offset of 24)
+ I $D(^%ZOSF("ZVX")) S VALM("BM")=$S($G(IOSL):IOSL-(24-$P(VALM0,U,6)),1:$P(VALM0,U,6))
+ ; DSS/SMH END MODS
  S VALM("FIXED")=$S($G(^SD(409.61,VALM("IFN"),"COL",+$O(^SD(409.61,VALM("IFN"),"COL","AIDENT",1,0)),0))]"":$P(^(0),U,2)+$P(^(0),U,3),1:0)
- ; VEN/SMH TEMP
- ; S VALM("RM")=$S($P(VALM0,U,4):$P(VALM0,U,4),1:80)
- S VALM("RM")=IOM
- ; VEN/SMH END TEMP
+ S VALM("RM")=$S($P(VALM0,U,4):$P(VALM0,U,4),1:80)
+ ; DSS/SMH BEGIN MODS - Use IOM by default for right margin
+ I $D(^%ZOSF("ZVX")) S VALM("RM")=IOM
+ ; DSS/SMH END MODS
  S VALMCC=+$P(VALM0,U,8)
  S VALM("ENTITY")=$P(VALM0,U,9)
  S VALM("PROTOCOL")=$P(VALM0,U,10)
@@ -115,24 +111,3 @@ CALC ; -- calculate derived parmeters
  I $G(^TMP("VALM DATA",$J,VALMEVL,"HIDDEN"))'=$P($G(VALMKEY),U,2) D KEYS^VALM00($G(^("HIDDEN")),1)
  S:$G(^DISV($S($D(DUZ)#2:DUZ,1:0),"VALMMENU",VALM("PROTOCOL")))="" ^(VALM("PROTOCOL"))=1 S VALMMENU=^(VALM("PROTOCOL"))
  Q
- ;
- ; VEN/SMH -- ALL MINE WHAT FOLLOWS
-AUTOMARG() ;RETURNS IOM^IOSL IF IT CAN and resets terminal to those dimensions; GT.M and Cache
- ; Stolen from George Timson's %ZIS3.
- ; ZEXCEPT: APC,TERM,WIDTH - these are not really variables
- N X S X=0 X ^%ZOSF("RM")
- N %I,%T,ESC,DIM S %I=$I,%T=$T D
- . ; resize terminal to match actual dimensions
- . S ESC=$C(27)
- . W ESC,"7",ESC,"[r",ESC,"[999;999H",ESC,"[6n"
- . I +$SY=0 U $P:(:"+S+I":"R") R DIM:1 E  Q
- . I +$SY=47 U $P:(TERM="R":NOECHO) R DIM:1 E  Q
- . W ESC,"8"
- . I +$SY=0 I DIM?.APC U $P:("") Q
- . I +$SY=47 I DIM?.APC U $P:(TERM="":ECHO) Q
- . S DIM=+$P(DIM,";",2)_"^"_+$P(DIM,"[",2)
- . I +$SY=0 U $P:(+DIM:"")
- . I +$SY=47 U $P:(TERM="":ECHO:WIDTH=+$P(DIM,";",2):LENGTH=+$P(DIM,"[",2))
- ; restore state
- U %I I %T
- Q:$Q $S(DIM:DIM,1:"") Q

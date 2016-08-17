@@ -108,3 +108,21 @@ REW1 S X="REWERR^%ZIS4",@^%ZOSF("TRAP")
  Q 1
 REWERR ;Error encountered
  Q 0
+ ; DSS/SMH - BEGIN MODS - This is new code to be called from %ZIS3
+AUTOMARG() ;RETURNS IOM^IOSL IF IT CAN and resets terminal to those dimensions; GT.M
+ ; Stolen from George Timson's %ZIS3.
+ ; ZEXCEPT: APC,TERM,WIDTH - these are not really variables
+ N X S X=0 X ^%ZOSF("RM")
+ N %I,%T,ESC,DIM S %I=$I,%T=$T D
+ . ; resize terminal to match actual dimensions
+ . S ESC=$C(27)
+ . W ESC,"7",ESC,"[r",ESC,"[999;999H",ESC,"[6n"
+ . U $P:(TERM="R":NOECHO) R DIM:1 E  Q
+ . W ESC,"8"
+ . I DIM?.APC U $P:(TERM="":ECHO) Q
+ . S DIM=+$P(DIM,";",2)_"^"_+$P(DIM,"[",2)
+ . U $P:(TERM="":ECHO:WIDTH=+$P(DIM,";",2):LENGTH=+$P(DIM,"[",2))
+ ; restore state
+ U %I I %T
+ Q:$Q $S(DIM:DIM,1:"") Q
+ ; DSS/SMH - END MODS

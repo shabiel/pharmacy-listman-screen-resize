@@ -141,3 +141,21 @@ REW1 ;ZIS set % to the current $I so need to update % if = IO
 REWERR ;Error encountered
  S IO("ERROR")=$EC,$ECODE=""
  Q 0
+ ; DSS/SMH - BEGIN MODS - This is new code to be called from %ZIS3
+AUTOMARG() ;RETURNS IOM^IOSL IF IT CAN and resets terminal to those dimensions; Cache Version
+ ; Stolen from George Timson's %ZIS3.
+ ; ZEXCEPT: APC,TERM,WIDTH - these are not really variables
+ N X S X=0 X ^%ZOSF("RM")
+ N %I,%T,ESC,DIM S %I=$I,%T=$T D
+ . ; resize terminal to match actual dimensions
+ . S ESC=$C(27)
+ . W ESC,"7",ESC,"[r",ESC,"[999;999H",ESC,"[6n"
+ . U $P:(:"+S+I":"R") R DIM:1 E  Q
+ . W ESC,"8"
+ . I DIM?.APC U $P:("") Q
+ . S DIM=+$P(DIM,";",2)_"^"_+$P(DIM,"[",2)
+ . U $P:(+DIM:"")
+ ; restore state
+ U %I I %T
+ Q:$Q $S(DIM:DIM,1:"") Q
+ ; DSS/SMH - END MODS

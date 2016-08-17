@@ -35,6 +35,9 @@ DPLYOR ;displays status of patient's orders
  K DIR,DIRUT,DTOUT,DUOUT
  Q
 A ;resizes list area
+ ; DSS/SMH - BEGIN MODS - Don't resize for vxVistA
+ I $D(^%ZOSF("ZVX")) QUIT
+ ; DSS/SMH - END MODS
  S PSOBM=$S(VALMMENU:19,1:21) I VALM("BM")'=PSOBM S VALMBCK="R" D
  .S VALM("BM")=PSOBM,VALM("LINES")=(PSOBM-VALM("TM"))+1 I +$G(VALMCC) D RESET^VALM4
  Q

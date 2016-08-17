@@ -8,6 +8,9 @@ INSTR(STR,X,Y,LENGTH,ERASE) ; -- insert text
  ; LENGTH := clear # of characters
  ;  ERASE := erase chars first
  W IOSC
+ ; DSS/SMH - BEGIN MODS - MUST round down X and Y, in case they are decimals
+ S X=X\1,Y=Y\1
+ ; DSS/SMH - END MODS
  I $G(ERASE) S DY=Y-1,DX=X-1 X IOXY W $J("",LENGTH)
  S DY=Y-1,DX=X-1 X IOXY W STR
  W IORC
