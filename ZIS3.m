@@ -1,5 +1,5 @@
-%ZIS3 ;SFISC/AC,RWF -- DEVICE HANDLER(DEVICE TYPES & PARAMETERS) ;06/09/10  17:47
- ;;8.0;KERNEL;**18,36,69,104,391,440,499,546**;JUL 10, 1995;Build 9
+%ZIS3 ;SFISC/AC,RWF -- DEVICE HANDLER(DEVICE TYPES & PARAMETERS) ; 8/18/16 7:32pm
+ ;;8.0;KERNEL;**18,36,69,104,391,440,499,546**;JUL 10, 1995;Build 2
  ;Per VHA Directive 2004-038, this routine should not be modified
  ;Call with a Go from ^%ZIS2
  I %ZIS'["T",$G(^%ZIS(1,+%E,"POX"))]"" D XPOX^ZISX(%E) ;Pre-Open
@@ -37,7 +37,7 @@ MARGN ;Get the margin and page length
  I %A>3 S $P(%Z91,"^")=$S(%A>255:255,1:+%A)
  I $P(%Y,";",2) S $P(%Z91,"^",3)=+$S($P(%Y,";",2)>65534:65534,1:$P(%Y,";",2)) ;Cache fix for $Y#65535 wrap
  ; DSS/SMH BEGIN MODS - Attempt to get the best margins for the terminal
- I $D(^%ZOSF("ZVX")),$T(AUTOMARG^%ZIS4)]"" D
+ I $D(^%ZOSF("ZVX")),$T(AUTOMARG^%ZIS4)]"",%ZTYPE["TRM",%ZIS'[0,$E(%ZISIOST,1,2)="C-",'$P(%Y,";",2) D
  . N RMPL,RM,PL S RMPL=$$AUTOMARG^%ZIS4() ; Query terminal for best margins.
  . I 'RMPL QUIT               ; NB: Not always possible to query the terminal, esp if we do it multiple times in succession
  . S RM=$P(RMPL,"^",1)        ; Right Margin (normally IOM)
