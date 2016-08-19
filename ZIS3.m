@@ -37,7 +37,8 @@ MARGN ;Get the margin and page length
  I %A>3 S $P(%Z91,"^")=$S(%A>255:255,1:+%A)
  I $P(%Y,";",2) S $P(%Z91,"^",3)=+$S($P(%Y,";",2)>65534:65534,1:$P(%Y,";",2)) ;Cache fix for $Y#65535 wrap
  ; DSS/SMH BEGIN MODS - Attempt to get the best margins for the terminal
- I $D(^%ZOSF("ZVX")),$T(AUTOMARG^%ZIS4)]"",%ZTYPE["TRM",%ZIS'[0,$E(%ZISIOST,1,2)="C-",'$P(%Y,";",2) D
+ ; %ZIS'[0 to not pick up Null Device; %ZISIOST must be a terminal; User shouldn't have specified actual margins.
+ I $D(^%ZOSF("ZVX")),$T(AUTOMARG^%ZIS4)]"",%ZTYPE["TRM",%ZIS'[0,$E(%ZISIOST,1,2)="C-",'($P(%Y,";",1)!$P(%Y,";",2)) D
  . N RMPL,RM,PL S RMPL=$$AUTOMARG^%ZIS4() ; Query terminal for best margins.
  . I 'RMPL QUIT               ; NB: Not always possible to query the terminal, esp if we do it multiple times in succession
  . S RM=$P(RMPL,"^",1)        ; Right Margin (normally IOM)
