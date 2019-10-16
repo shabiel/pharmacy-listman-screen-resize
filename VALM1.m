@@ -1,6 +1,7 @@
-VALM1 ;ALB/MJK - Screen Manipulation Utilities ;06/27/2006
- ;;1.0;List Manager;**5,6,8,9**;Aug 13, 1993;Build 2
- ;Per VHA Directive 2004-038, this routine should not be modified.
+VALM1 ;ALB/MJK - Screen Manipulation Utilities ; 3/6/17 11:44am
+ ;;1.0;List Manager;**5,6,8,9**;Aug 13, 1993
+ ; Original Routine authored by US Dept of Veteran Affairs
+ ; Tag INSTR modified by DSS 2016
 INSTR(STR,X,Y,LENGTH,ERASE) ; -- insert text
  ;    STR := string to insert
  ;      X := X coordinate

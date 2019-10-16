@@ -1,6 +1,7 @@
-%ZIS4 ;ISF/RWF,DW - DEVICE HANDLER SPECIFIC CODE (GT.M for Unix/VMS) ;05/29/2008
- ;;8.0;KERNEL;**275,425,440,499**;Jul 10, 1995;Build 14
- ;Per VHA Directive 2004-038, this routine should not be modified
+%ZIS4 ;ISF/RWF,DW - DEVICE HANDLER SPECIFIC CODE (GT.M for Unix/VMS) ; 3/6/17 11:45am
+ ;;8.0;KERNEL;**275,425,440,499**;Jul 10, 1995
+ ; Original Routine authored by US Dept of Veteran Affairs
+ ; $$AUTOMARG tag new by DSS 2016
 OPEN ;From %ZIS3 for TRM
  G OPN2:$D(IO(1,IO))
  S POP=0 D OP1 G NOPEN:'$D(IO(1,IO))

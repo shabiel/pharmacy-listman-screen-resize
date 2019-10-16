@@ -1,7 +1,9 @@
-PSJ200 ;BIR/RSB-UTILITY TO CORRECT CHANGED USER NAMES IN IV'S ;30 APR 97 / 8:39 AM
+PSJ200 ;BIR/RSB-UTILITY TO CORRECT CHANGED USER NAMES IN IV'S ; 3/6/17 11:41am
  ;;5.0; INPATIENT MEDICATIONS ;;16 DEC 97
- ; DO NOT DELETE THIS ROUTINE, IT IS CALLED BY MANY PROTOCOL 
+ ; DO NOT DELETE THIS ROUTINE, IT IS CALLED BY MANY PROTOCOL
  ; ENTRY ACTIONS TO CHANGE THE SCREEN LENGTH IN LISTMAN!
+ ; Original Routine authored by US Dept of Veteran Affairs
+ ; Tag A modified by DSS in 2016
  ;
  I '$L($O(^XTMP("PSJ NEW PERSON",0))) D  Q
  .W !!," This option doesn't need to be run.  All changed names in IVs have "
@@ -73,8 +75,8 @@ M ; sends mail message when complete
  ;
 A(LONG,SHORT,SHRINK)         ;  Resizes list area
  ;                      copied this from TIU    RESIZE^TIULM
- ; DSS/SMH - BEGIN MODS - Don't resize this for vxVISTA
- I $D(^%ZOSF("ZVX")) QUIT
+ ; DSS/SMH - BEGIN MODS - DON'T DO THIS
+ QUIT
  ; DSS/SMH - BEGIN MODS
  N PSJBM S PSJBM=$S(VALMMENU:SHORT,+$G(SHRINK):SHORT,1:LONG)
  I VALM("BM")'=PSJBM S VALMBCK="R" D

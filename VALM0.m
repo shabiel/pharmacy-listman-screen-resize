@@ -1,5 +1,7 @@
-VALM0 ;MJK/ALB - List Manager (cont.);08:19 PM  17 Jan 1993 ; 10/26/14 10:05pm
- ;;1.0;List Manager;;Aug 13, 1993;Build 9
+VALM0 ;MJK/ALB - List Manager (cont.);08:19 PM  17 Jan 1993 ; 5/10/17 10:47am
+ ;;1.0;List Manager;;Aug 13, 1993
+ ; Original Routine authored by US Dept of Veteran Affairs
+ ; Tag TEMP modified by DSS in 2016
  ;
 INIT(NAME,PARMS) ;
  D STACK
@@ -72,12 +74,16 @@ TEMP(NAME) ; -- use list template
  S VALM("TM")=$P(VALM0,U,5)
  S VALM("BM")=$P(VALM0,U,6)
  ; DSS/SMH BEGIN MODS - Use IOSL by default for bottom margin (BM was previous written to an offset of 24)
- I $D(^%ZOSF("ZVX")) S VALM("BM")=$S($G(IOSL):IOSL-(24-$P(VALM0,U,6)),1:$P(VALM0,U,6))
+ D
+ . I $G(XQY),$$GET^XPAR("ALL","VFD VALM BM BY OPTION",XQY,"I") QUIT
+ . S VALM("BM")=$S($G(IOSL):IOSL-(24-$P(VALM0,U,6)),1:$P(VALM0,U,6))
  ; DSS/SMH END MODS
  S VALM("FIXED")=$S($G(^SD(409.61,VALM("IFN"),"COL",+$O(^SD(409.61,VALM("IFN"),"COL","AIDENT",1,0)),0))]"":$P(^(0),U,2)+$P(^(0),U,3),1:0)
  S VALM("RM")=$S($P(VALM0,U,4):$P(VALM0,U,4),1:80)
  ; DSS/SMH BEGIN MODS - Use IOM by default for right margin
- I $D(^%ZOSF("ZVX")) S VALM("RM")=IOM
+ D
+ . I $G(XQY),$$GET^XPAR("ALL","VFD VALM BM BY OPTION",XQY,"I") QUIT
+ . S VALM("RM")=IOM
  ; DSS/SMH END MODS
  S VALMCC=+$P(VALM0,U,8)
  S VALM("ENTITY")=$P(VALM0,U,9)

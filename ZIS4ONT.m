@@ -1,6 +1,8 @@
-%ZIS4 ;SFISC/RWF,AC - DEVICE HANDLER SPOOL SPECIFIC CODE (Cache) ;08/02/10  14:50
- ;;8.0;KERNEL;**34,59,69,191,278,293,440,499,524,546,543,584**;Jul 10, 1995;Build 6
+%ZIS4 ;SFISC/RWF,AC - DEVICE HANDLER SPOOL SPECIFIC CODE (Cache) ; 3/6/17 11:46am
+ ;;8.0;KERNEL;**34,59,69,191,278,293,440,499,524,546,543,584**;Jul 10, 1995
  ;Per VHA Directive 2004-038, this routine should not be modified
+ ; Original Routine authored by US Dept of Veteran Affairs
+ ; $$AUTOMARG tag new by DSS 2016
  ;
 OPEN ;Called for TRM devices
  G OPN2:$D(IO(1,IO))
